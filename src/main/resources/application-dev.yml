@@ -1,0 +1,18 @@
+springdoc:
+  api-docs:
+    enabled: true
+  group-configs:
+    - group: 文件模块
+      paths-to-match: /exam/api/file/**
+    - group: 用户模块
+      paths-to-match: /exam/api/user/**
+    - group: 系统模块
+      paths-to-match: /exam/api/sys/**
+    - group: 考试模块
+      paths-to-match: /exam/api/exam/**
+    - group: 试卷模块
+      paths-to-match: /exam/api/paper/**
+    - group: 试题模块
+      paths-to-match: /exam/api/qu/**
+    - group: 题库模块
+      paths-to-match: /exam/api/repo/**

@@ -20,7 +20,7 @@ public class CustomerExceptionHandler {
     @ExceptionHandler({BizException.class})
     public JsonResult<?> serviceExceptionHandler(BizException e) {
         e.printStackTrace();
-        log.error("服务器异常 {}", e.getMsg());
+        log.error("服务器异常 ===> {}", e.getMsg());
         return JsonResult.bizException(e);
     }
 

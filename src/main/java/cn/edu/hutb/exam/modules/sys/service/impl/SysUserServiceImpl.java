@@ -5,6 +5,7 @@ import cn.edu.hutb.exam.core.result.BizErrorEnum;
 import cn.edu.hutb.exam.core.util.BCrypt;
 import cn.edu.hutb.exam.modules.sys.dto.response.SysUserLoginRespDTO;
 import cn.edu.hutb.exam.modules.sys.entity.SysUser;
+import cn.edu.hutb.exam.modules.sys.enums.UserState;
 import cn.edu.hutb.exam.modules.sys.mapper.SysUserMapper;
 import cn.edu.hutb.exam.modules.sys.service.SysUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -29,8 +30,10 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
         if (user == null) {
             throw new BizException(BizErrorEnum.ERROR_90010001);
         }
-        // TODO 账号被冻结
-        // if (user.getState())
+        //  账号被冻结
+        if (UserState.ABNORMAL.getStatue().equals(user.getState())) {
+            throw new BizException(BizErrorEnum.ERROR_90010005);
+        }
         if (!BCrypt.checkpw(password, user.getPassword())) {
             throw new BizException(BizErrorEnum.ERROR_90010002);
         }

@@ -74,14 +74,13 @@ CREATE TABLE `sys_user`
     `create_time` TIMESTAMP             DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` TIMESTAMP             DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     `state`       int          NOT NULL DEFAULT '0' COMMENT '状态',
-    `data_flag`   int          NOT NULL DEFAULT '0' COMMENT '0正常,1隐藏',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_general_ci COMMENT ='用户表';
 
-INSERT INTO `sys_user` (`id`, `user_name`, `real_name`, `password`, `role_ids`, `depart_id`, `state`, `data_flag`)
-VALUES ('10001', 'admin', '超管A', '$2a$10$pJEDCXFSJA9aU42WW023dezAlKGYphwjFjHchXa6nCGaTZoDbPk1q', 'sa', '1', 0, 0);
+INSERT INTO `sys_user` (`id`, `user_name`, `real_name`, `password`, `role_ids`, `depart_id`, `state`)
+VALUES ('10001', 'admin', '超管A', '$2a$10$pJEDCXFSJA9aU42WW023dezAlKGYphwjFjHchXa6nCGaTZoDbPk1q', 'sa', '1', 0);
 
 
 -- ------------ 用户角色表 ------------ --

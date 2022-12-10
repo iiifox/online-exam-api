@@ -22,7 +22,7 @@ public class SysUserLoginRespDTO implements Serializable {
     private String id;
 
     @Schema(name = "用户名", required = true)
-    private String userName;
+    private String username;
 
     @Schema(name = "真实姓名", required = true)
     private String realName;

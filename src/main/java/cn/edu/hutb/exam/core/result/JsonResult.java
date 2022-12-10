@@ -50,7 +50,7 @@ public class JsonResult<T> {
     /**
      * 通过业务异常类构造
      */
-    public static JsonResult bizException(BizException error) {
+    public static JsonResult<?> bizException(BizException error) {
         return JsonResult.failure(error.getCode(), error.getMsg());
     }
 
@@ -77,6 +77,13 @@ public class JsonResult<T> {
      */
     public static JsonResult<?> success() {
         return JsonResult.success("操作成功！", null);
+    }
+
+    /**
+     * 响应成功，返回默认响应信息，携带响应数据
+     */
+    public static <T> JsonResult<T> success(T data) {
+        return JsonResult.success("操作成功！", data);
     }
 
     /**

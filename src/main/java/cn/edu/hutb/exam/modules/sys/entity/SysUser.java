@@ -30,7 +30,7 @@ public class SysUser extends Model<SysUser> {
      * 用户名
      */
     @TableField("user_name")
-    private String userName;
+    private String username;
 
     /**
      * 真实姓名

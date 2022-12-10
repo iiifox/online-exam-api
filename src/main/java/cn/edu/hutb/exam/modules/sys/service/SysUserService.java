@@ -10,6 +10,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @datetime 2022/12/10 14:52
  */
 public interface SysUserService extends IService<SysUser> {
-    SysUserLoginRespDTO login(String userName, String password);
+
+    /**
+     * 登录
+     */
+    SysUserLoginRespDTO login(String username, String password);
+
 }
 

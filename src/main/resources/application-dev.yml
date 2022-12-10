@@ -24,3 +24,6 @@ spring:
     password: 123456
     type: com.zaxxer.hikari.HikariDataSource
 
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

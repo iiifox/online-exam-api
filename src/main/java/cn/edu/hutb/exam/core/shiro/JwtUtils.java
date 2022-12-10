@@ -19,7 +19,7 @@ public class JwtUtils {
     /**
      * 会话令牌token在请求头中的字段名
      */
-    public static final String TOKEN_FIELD;
+    public static final String TOKEN_HEADER_FIELD;
 
     /**
      * 私钥
@@ -39,7 +39,7 @@ public class JwtUtils {
     static {
         ResourceBundle bundle = ResourceBundle.getBundle("jwt");
         SECRET = bundle.getString("jwt.secret");
-        TOKEN_FIELD = bundle.getString("jwt.tokenField");
+        TOKEN_HEADER_FIELD = bundle.getString("jwt.tokenHeaderField");
         EXPIRE_TIME = Integer.parseInt(bundle.getString("jwt.expire-time"));
     }
 

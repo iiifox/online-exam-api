@@ -10,7 +10,7 @@ class JwtUtilsTest {
 
     @Test
     void test() {
-        System.out.println(JwtUtils.TOKEN_FIELD);
+        System.out.println(JwtUtils.TOKEN_HEADER_FIELD);
         System.out.println(JwtUtils.EXPIRE_TIME);
 
 

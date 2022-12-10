@@ -1,10 +1,13 @@
 package cn.edu.hutb.exam.core.result;
 
+import lombok.Getter;
+
 /**
  * @author 田章
  * @description 业务异常的错误码：用于定义接口的响应数据，枚举类免去取名难的问题。
  * @datetime 2022/12/9 23:26
  */
+@Getter
 public enum BizErrorEnum {
 
     //************ 通用错误，接口参数不全 ************//
@@ -22,7 +25,7 @@ public enum BizErrorEnum {
     ERROR_90010003("至少要包含一个角色！"),
     ERROR_90010005("账号被冻结，请联系管理员！");
 
-    public String msg;
+    private String msg;
 
     BizErrorEnum(String msg) {
         this.msg = msg;

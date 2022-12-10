@@ -41,13 +41,6 @@ public class JsonResult<T> {
     }
 
     /**
-     * 通过错误码枚举类构造
-     */
-    public static JsonResult<?> bizErrorEnum(BizErrorEnum error) {
-        return JsonResult.failure(error.getCode(), error.msg);
-    }
-
-    /**
      * 通过业务异常类构造
      */
     public static JsonResult<?> bizException(BizException error) {

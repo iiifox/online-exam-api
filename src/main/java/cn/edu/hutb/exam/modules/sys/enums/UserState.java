@@ -20,7 +20,7 @@ public enum UserState {
      */
     ABNORMAL(1);
 
-    Integer statue;
+    private Integer statue;
 
     UserState(Integer statue) {
         this.statue = statue;

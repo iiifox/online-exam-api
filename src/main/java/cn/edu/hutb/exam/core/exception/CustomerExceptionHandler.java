@@ -21,7 +21,7 @@ public class CustomerExceptionHandler {
     public JsonResult<?> serviceExceptionHandler(BizException e) {
         e.printStackTrace();
         log.error("服务器异常 {}", e.getMsg());
-        return new JsonResult<>(e);
+        return JsonResult.bizException(e);
     }
 
 }

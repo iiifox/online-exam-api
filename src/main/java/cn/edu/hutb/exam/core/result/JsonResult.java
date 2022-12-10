@@ -2,8 +2,8 @@ package cn.edu.hutb.exam.core.result;
 
 import cn.edu.hutb.exam.core.exception.BizException;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @author 田章
@@ -11,21 +11,21 @@ import lombok.NoArgsConstructor;
  * @datetime 2022/12/9 23:39
  */
 @Data
-@NoArgsConstructor
-@Schema(name="接口响应", description="接口响应")
-public class JsonResult<T>{
-
-    /**
-     * 响应消息
-     */
-    @Schema(name = "响应消息")
-    private String msg;
+@AllArgsConstructor
+@Schema(name = "接口响应", description = "接口响应")
+public class JsonResult<T> {
 
     /**
      * 响应代码
      */
     @Schema(name = "响应代码,0为成功,非0为失败", required = true)
     private Integer code;
+
+    /**
+     * 响应消息
+     */
+    @Schema(name = "响应消息")
+    private String msg;
 
     /**
      * 请求或响应body
@@ -36,24 +36,54 @@ public class JsonResult<T>{
     /**
      * 是否成功
      */
-    public boolean isSuccess(){
+    public boolean isSuccess() {
         return code.equals(0);
     }
 
     /**
      * 通过错误码枚举类构造
      */
-    public JsonResult(BizErrorEnum error){
-        this.code = error.getCode();
-        this.msg = error.msg;
+    public static JsonResult<?> bizErrorEnum(BizErrorEnum error) {
+        return JsonResult.failure(error.getCode(), error.msg);
     }
 
     /**
-     * 通过服务器异常类构造
+     * 通过业务异常类构造
      */
-    public JsonResult(BizException error){
-        this.code = error.getCode();
-        this.msg = error.getMsg();
+    public static JsonResult bizException(BizException error) {
+        return JsonResult.failure(error.getCode(), error.getMsg());
+    }
+
+    private static JsonResult<?> failure(Integer code, String msg) {
+        return new JsonResult<>(code, msg, null);
+    }
+
+    /**
+     * 响应失败，返回默认响应消息
+     */
+    public static JsonResult<?> failure() {
+        return JsonResult.failure("请求失败！");
+    }
+
+    /**
+     * 响应失败，返回自定义的响应消息
+     */
+    public static JsonResult<?> failure(String msg) {
+        return JsonResult.failure(1, msg);
+    }
+
+    /**
+     * 响应成功，返回默认响应信息，不携带响应数据
+     */
+    public static JsonResult<?> success() {
+        return JsonResult.success("操作成功！", null);
+    }
+
+    /**
+     * 响应成功，自定义响应信息和响应数据
+     */
+    public static <T> JsonResult<T> success(String msg, T data) {
+        return new JsonResult<>(0, msg, data);
     }
 
 }

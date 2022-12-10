@@ -2,6 +2,7 @@ package cn.edu.hutb.exam.modules.sys.service.impl;
 
 import cn.edu.hutb.exam.core.exception.BizException;
 import cn.edu.hutb.exam.core.result.BizErrorEnum;
+import cn.edu.hutb.exam.core.shiro.JwtUtils;
 import cn.edu.hutb.exam.core.util.BCrypt;
 import cn.edu.hutb.exam.modules.sys.dto.response.SysUserLoginRespDTO;
 import cn.edu.hutb.exam.modules.sys.entity.SysUser;
@@ -12,6 +13,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 /**
  * @author 田章
@@ -47,7 +50,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
     private SysUserLoginRespDTO setToken(SysUser user) {
         SysUserLoginRespDTO respDTO = new SysUserLoginRespDTO();
         BeanUtils.copyProperties(user, respDTO);
-        // TODO 生成Token
+        // 生成Token
+        respDTO.setToken(JwtUtils.getToken(Map.of("username", user.getUsername())));
         // TODO 填充角色表
         return respDTO;
     }

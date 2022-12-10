@@ -1,5 +1,6 @@
 package cn.edu.hutb.exam.config;
 
+import cn.edu.hutb.exam.core.shiro.JwtUtils;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
@@ -16,7 +17,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 // 在请求头当中配置JWT令牌字符串，SpringDoc需要额外在方法上添加注解，我们也可以在Knife4j中设置全局请求头
-                .components(new Components().addSecuritySchemes("token", new SecurityScheme()))
+                .components(new Components().addSecuritySchemes(JwtUtils.TOKEN_FIELD, new SecurityScheme()))
                 .info(new Info()
                         .title("在线考试系统 API")
                         .version("0.0.1")

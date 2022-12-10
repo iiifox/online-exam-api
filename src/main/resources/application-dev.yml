@@ -16,3 +16,10 @@ springdoc:
       paths-to-match: /exam/api/qu/**
     - group: 题库模块
       paths-to-match: /exam/api/repo/**
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/online_exam?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+

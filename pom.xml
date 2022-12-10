@@ -17,8 +17,11 @@
     <properties>
         <java.version>1.8</java.version>
 
-        <springdoc.version>1.6.13</springdoc.version>
-        <knife4j.version>3.0.3</knife4j.version>
+        <!--文档-->
+        <springdoc-openapi-ui.version>1.6.13</springdoc-openapi-ui.version>
+        <knife4j-springdoc-ui.version>3.0.3</knife4j-springdoc-ui.version>
+
+        <mybatis-plus-boot-starter.version>3.5.2</mybatis-plus-boot-starter.version>
     </properties>
 
     <dependencies>
@@ -68,12 +71,18 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${springdoc.version}</version>
+            <version>${springdoc-openapi-ui.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-springdoc-ui</artifactId>
-            <version>${knife4j.version}</version>
+            <version>${knife4j-springdoc-ui.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus-boot-starter.version}</version>
         </dependency>
     </dependencies>
 

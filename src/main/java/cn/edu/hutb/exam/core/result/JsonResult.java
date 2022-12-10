@@ -1,6 +1,6 @@
 package cn.edu.hutb.exam.core.result;
 
-import cn.edu.hutb.exam.core.exception.ServiceException;
+import cn.edu.hutb.exam.core.exception.BizException;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Schema(name="接口响应", description="接口响应")
-public class ApiResult<T>{
+public class JsonResult<T>{
 
     /**
      * 响应消息
@@ -43,7 +43,7 @@ public class ApiResult<T>{
     /**
      * 通过错误码枚举类构造
      */
-    public ApiResult(ApiError error){
+    public JsonResult(BizErrorEnum error){
         this.code = error.getCode();
         this.msg = error.msg;
     }
@@ -51,7 +51,7 @@ public class ApiResult<T>{
     /**
      * 通过服务器异常类构造
      */
-    public ApiResult(ServiceException error){
+    public JsonResult(BizException error){
         this.code = error.getCode();
         this.msg = error.getMsg();
     }

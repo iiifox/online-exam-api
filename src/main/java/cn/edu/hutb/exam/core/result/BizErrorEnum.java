@@ -2,10 +2,10 @@ package cn.edu.hutb.exam.core.result;
 
 /**
  * @author 田章
- * @description 全局错误码：用于定义接口的响应数据，枚举类免去取名难的问题。
+ * @description 业务异常的错误码：用于定义接口的响应数据，枚举类免去取名难的问题。
  * @datetime 2022/12/9 23:26
  */
-public enum ApiError {
+public enum BizErrorEnum {
 
     //************ 通用错误，接口参数不全 ************//
     ERROR_10010001("参数不全或类型错误！"),
@@ -24,14 +24,14 @@ public enum ApiError {
 
     public String msg;
 
-    ApiError(String msg) {
+    BizErrorEnum(String msg) {
         this.msg = msg;
     }
 
     /**
      * 获取错误码
      */
-    public Integer getCode(){
+    public Integer getCode() {
         return Integer.parseInt(this.name().replace("ERROR_", ""));
     }
 

@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class JwtUtils {
 
     /**
-     * 会话令牌token在请求头中的字段名
+     * 会话令牌token在请求头中的字段名(供其他类使用)
      */
     public static final String TOKEN_HEADER_FIELD;
 
@@ -29,12 +29,12 @@ public class JwtUtils {
     /**
      * 令牌有效期（单位：天）
      */
-    public static final int EXPIRE_TIME;
+    private static final int EXPIRE_TIME;
 
     /**
      * 令牌过期时间单位
      */
-    public static final int EXPIRE_TIME_UNIT = Calendar.DAY_OF_MONTH;
+    private static final int EXPIRE_TIME_UNIT = Calendar.DAY_OF_MONTH;
 
     static {
         ResourceBundle bundle = ResourceBundle.getBundle("jwt");

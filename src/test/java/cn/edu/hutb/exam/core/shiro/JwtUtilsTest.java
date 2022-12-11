@@ -11,7 +11,7 @@ class JwtUtilsTest {
     @Test
     void test() {
         System.out.println(JwtUtils.TOKEN_HEADER_FIELD);
-        System.out.println(JwtUtils.EXPIRE_TIME);
+        // System.out.println(JwtUtils.EXPIRE_TIME);
 
 
         String token1 = JwtUtils.getToken(Map.of("username", "admin", "测试k", "测试v"));
@@ -28,7 +28,7 @@ class JwtUtilsTest {
     @Test
     void testCalendar() {
         Calendar calendar = Calendar.getInstance();
-        calendar.add(JwtUtils.EXPIRE_TIME_UNIT, JwtUtils.EXPIRE_TIME);
+        // calendar.add(JwtUtils.EXPIRE_TIME_UNIT, JwtUtils.EXPIRE_TIME);
         System.out.println(calendar.getTime());
     }
 

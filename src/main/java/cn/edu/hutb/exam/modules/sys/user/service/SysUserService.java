@@ -1,7 +1,7 @@
-package cn.edu.hutb.exam.modules.sys.service;
+package cn.edu.hutb.exam.modules.sys.user.service;
 
-import cn.edu.hutb.exam.modules.sys.dto.response.SysUserLoginRespDTO;
-import cn.edu.hutb.exam.modules.sys.entity.SysUser;
+import cn.edu.hutb.exam.modules.sys.user.dto.response.SysUserLoginRespDTO;
+import cn.edu.hutb.exam.modules.sys.user.entity.SysUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

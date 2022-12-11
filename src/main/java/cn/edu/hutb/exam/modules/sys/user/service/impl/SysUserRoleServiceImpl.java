@@ -1,8 +1,8 @@
-package cn.edu.hutb.exam.modules.sys.service.impl;
+package cn.edu.hutb.exam.modules.sys.user.service.impl;
 
-import cn.edu.hutb.exam.modules.sys.entity.SysUserRole;
-import cn.edu.hutb.exam.modules.sys.mapper.SysUserRoleMapper;
-import cn.edu.hutb.exam.modules.sys.service.SysUserRoleService;
+import cn.edu.hutb.exam.modules.sys.user.entity.SysUserRole;
+import cn.edu.hutb.exam.modules.sys.user.mapper.SysUserRoleMapper;
+import cn.edu.hutb.exam.modules.sys.user.service.SysUserRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

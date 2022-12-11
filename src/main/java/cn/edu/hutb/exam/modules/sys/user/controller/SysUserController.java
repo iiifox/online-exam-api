@@ -1,9 +1,9 @@
-package cn.edu.hutb.exam.modules.sys.controller;
+package cn.edu.hutb.exam.modules.sys.user.controller;
 
 import cn.edu.hutb.exam.core.result.JsonResult;
-import cn.edu.hutb.exam.modules.sys.dto.request.SysUserLoginReqDTO;
-import cn.edu.hutb.exam.modules.sys.dto.response.SysUserLoginRespDTO;
-import cn.edu.hutb.exam.modules.sys.service.SysUserService;
+import cn.edu.hutb.exam.modules.sys.user.dto.request.SysUserLoginReqDTO;
+import cn.edu.hutb.exam.modules.sys.user.dto.response.SysUserLoginRespDTO;
+import cn.edu.hutb.exam.modules.sys.user.service.SysUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package cn.edu.hutb.exam.modules.sys.dto.request;
+package cn.edu.hutb.exam.modules.sys.user.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

@@ -1,14 +1,14 @@
-package cn.edu.hutb.exam.modules.sys.service.impl;
+package cn.edu.hutb.exam.modules.sys.user.service.impl;
 
 import cn.edu.hutb.exam.core.exception.BizException;
 import cn.edu.hutb.exam.core.result.BizErrorEnum;
 import cn.edu.hutb.exam.core.shiro.JwtUtils;
 import cn.edu.hutb.exam.core.util.BCrypt;
-import cn.edu.hutb.exam.modules.sys.dto.response.SysUserLoginRespDTO;
-import cn.edu.hutb.exam.modules.sys.entity.SysUser;
-import cn.edu.hutb.exam.modules.sys.enums.UserState;
-import cn.edu.hutb.exam.modules.sys.mapper.SysUserMapper;
-import cn.edu.hutb.exam.modules.sys.service.SysUserService;
+import cn.edu.hutb.exam.modules.sys.user.dto.response.SysUserLoginRespDTO;
+import cn.edu.hutb.exam.modules.sys.user.entity.SysUser;
+import cn.edu.hutb.exam.modules.sys.user.enums.UserState;
+import cn.edu.hutb.exam.modules.sys.user.mapper.SysUserMapper;
+import cn.edu.hutb.exam.modules.sys.user.service.SysUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;

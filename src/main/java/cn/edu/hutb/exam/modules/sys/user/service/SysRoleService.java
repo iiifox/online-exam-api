@@ -1,6 +1,6 @@
-package cn.edu.hutb.exam.modules.sys.service;
+package cn.edu.hutb.exam.modules.sys.user.service;
 
-import cn.edu.hutb.exam.modules.sys.entity.SysRole;
+import cn.edu.hutb.exam.modules.sys.user.entity.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

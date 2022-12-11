@@ -1,4 +1,4 @@
-package cn.edu.hutb.exam.modules.sys.enums;
+package cn.edu.hutb.exam.modules.sys.user.enums;
 
 import lombok.Getter;
 

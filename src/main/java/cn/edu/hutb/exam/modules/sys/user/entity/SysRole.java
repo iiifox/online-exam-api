@@ -1,4 +1,4 @@
-package cn.edu.hutb.exam.modules.sys.entity;
+package cn.edu.hutb.exam.modules.sys.user.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

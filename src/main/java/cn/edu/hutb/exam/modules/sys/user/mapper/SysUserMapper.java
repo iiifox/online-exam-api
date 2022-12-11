@@ -1,6 +1,6 @@
-package cn.edu.hutb.exam.modules.sys.mapper;
+package cn.edu.hutb.exam.modules.sys.user.mapper;
 
-import cn.edu.hutb.exam.modules.sys.entity.SysUser;
+import cn.edu.hutb.exam.modules.sys.user.entity.SysUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

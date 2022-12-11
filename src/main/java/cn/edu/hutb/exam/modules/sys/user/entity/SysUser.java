@@ -44,12 +44,6 @@ public class SysUser extends Model<SysUser> {
     private String password;
 
     /**
-     * 角色列表
-     */
-    @TableField("role_ids")
-    private String roleIds;
-
-    /**
      * 部门ID
      */
     @TableField("depart_id")

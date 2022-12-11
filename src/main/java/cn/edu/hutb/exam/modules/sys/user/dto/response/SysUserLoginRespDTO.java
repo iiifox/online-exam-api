@@ -27,9 +27,6 @@ public class SysUserLoginRespDTO implements Serializable {
     @Schema(name = "真实姓名", required = true)
     private String realName;
 
-    @Schema(name = "角色列表", required = true)
-    private String roleIds;
-
     @Schema(name = "部门ID", required = true)
     private String departId;
 

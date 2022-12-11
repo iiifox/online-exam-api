@@ -8,10 +8,12 @@ import cn.edu.hutb.exam.modules.sys.user.dto.response.SysUserLoginRespDTO;
 import cn.edu.hutb.exam.modules.sys.user.entity.SysUser;
 import cn.edu.hutb.exam.modules.sys.user.enums.UserState;
 import cn.edu.hutb.exam.modules.sys.user.mapper.SysUserMapper;
+import cn.edu.hutb.exam.modules.sys.user.service.SysUserRoleService;
 import cn.edu.hutb.exam.modules.sys.user.service.SysUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -24,6 +26,9 @@ import java.util.Map;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
         implements SysUserService {
+
+    @Autowired
+    private SysUserRoleService sysUserRoleService;
 
     @Override
     public SysUserLoginRespDTO login(String username, String password) {
@@ -52,7 +57,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
         BeanUtils.copyProperties(user, respDTO);
         // 生成Token
         respDTO.setToken(JwtUtils.getToken(Map.of("username", user.getUsername())));
-        // TODO 填充角色表
+        //  填充角色表
+        respDTO.setRoles(sysUserRoleService.listRoles(user.getId()));
         return respDTO;
     }
 

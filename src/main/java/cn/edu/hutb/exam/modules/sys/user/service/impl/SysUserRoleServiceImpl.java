@@ -3,8 +3,12 @@ package cn.edu.hutb.exam.modules.sys.user.service.impl;
 import cn.edu.hutb.exam.modules.sys.user.entity.SysUserRole;
 import cn.edu.hutb.exam.modules.sys.user.mapper.SysUserRoleMapper;
 import cn.edu.hutb.exam.modules.sys.user.service.SysUserRoleService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author 田章
@@ -14,4 +18,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole>
         implements SysUserRoleService {
+
+    @Override
+    public List<String> listRoles(String userId) {
+        return super.list(new QueryWrapper<SysUserRole>().lambda().eq(SysUserRole::getUserId, userId))
+                .stream()
+                .map(SysUserRole::getRoleId)
+                .collect(Collectors.toList());
+    }
 }
